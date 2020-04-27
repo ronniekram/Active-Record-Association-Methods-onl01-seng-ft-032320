@@ -3,14 +3,14 @@ class Genre < ActiveRecord::Base
   has_many :artists, through: :songs
 
   def song_count
-    Genre.song.count
+    Genre.songs.count
   end
 
   def artist_count
-    Genre.artist.count
+    Genre.artists.count
   end
 
   def all_artist_names
-    Genre.where("artist = ?")
+    Genre.where("artists = ?")
   end
 end
